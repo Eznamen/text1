@@ -10,13 +10,14 @@ public class Main {
 
         for (int i = 0; i < textLower.length(); i++) {
             char s = textLower.charAt(i);
-                if (map.containsKey(s)) {
-                    int value = map.get(s);
-                    map.put(s, value + 1);
-                } else {
-                    map.put(s, 1);
-                }
+            if (map.containsKey(s)) {
+                int value = map.get(s);
+                map.put(s, value + 1);
+            } else {
+                map.put(s, 1);
+            }
         }
+        
         int max = -1;
         for (Character keyMax : map.keySet()) {
             if (Character.isLetter(keyMax)) {
@@ -28,19 +29,14 @@ public class Main {
         }
         int min = Integer.MAX_VALUE;
         for (Character keyMin : map.keySet()) {
-
             if (Character.isLetter(keyMin)) {
                 int value = map.get(keyMin);
-
                 if (value < min) {
                     min = value;
                 }
             }
         }
 
-//        System.out.println(map);
-//        System.out.println("Max: " + max);
-//        System.out.println("Min: " + min);
         for (Character key : map.keySet()) {
             if (Character.isLetter(key)) {
                 int value = map.get(key);
@@ -49,15 +45,7 @@ public class Main {
                 } else if (value == min) {
                     System.out.println("Min: " + key + " - " + value);
                 }
-
             }
         }
-
     }
 }
-
-
-
-
-
-
